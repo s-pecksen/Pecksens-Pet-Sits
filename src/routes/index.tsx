@@ -137,26 +137,26 @@ function Index() {
               </a>
             </div>
             <dl className="mt-10 grid grid-cols-3 gap-6 max-w-md">
-              <Stat n="120+" label="Happy dogs" />
-              <Stat n="6yrs" label="Sitting together" />
-              <Stat n="5★" label="Avg. review" />
+              <Stat n="4yrs" label="Sitting together" />
+              <Stat n="60+" label="House-sits" />
+              <Stat n="30+" label="Dogs cared for" />
             </dl>
           </div>
           <div className="relative">
             <div className="absolute -inset-6 rounded-[2.5rem] bg-accent/40 blur-2xl" aria-hidden />
-            <img
-              src={heroImg}
-              alt="A golden retriever and a small terrier resting together in a sunlit home"
-              width={1600}
-              height={1200}
-              className="relative rounded-[2rem] shadow-2xl shadow-clay/20 ring-1 ring-border object-cover aspect-[4/3]"
-              fetchPriority="high"
-            />
+            <figure
+              className="relative rounded-[2rem] shadow-2xl shadow-clay/20 ring-1 ring-border bg-muted aspect-[4/3] flex items-center justify-center overflow-hidden"
+              aria-label="Hero photo placeholder"
+            >
+              <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground/70">
+                Hero photo · 4:3 (recommended 1600×1200)
+              </span>
+            </figure>
             <div className="absolute -bottom-5 -left-5 rounded-2xl bg-card px-5 py-4 shadow-xl ring-1 ring-border flex items-center gap-3">
               <Logo className="h-12 w-12" />
               <div>
-                <p className="text-sm font-semibold">Modern Sit</p>
-                <p className="text-xs text-muted-foreground">Insured · Background-checked</p>
+                <p className="text-sm font-semibold">{BRAND}</p>
+                <p className="text-xs text-muted-foreground">In-home dog &amp; house sitting</p>
               </div>
             </div>
           </div>
