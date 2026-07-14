@@ -167,26 +167,24 @@ function Index() {
       <Section
         id="services"
         eyebrow="What we do"
-        title="Care that fits into your life"
-        intro="Two specialties, one standard: attentive, thoughtful, and quietly professional."
+        title="In-home sitting, done properly"
+        intro="We stay in your home for the length of your trip. Your dog keeps their routine, and your house stays lived-in."
       >
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           <ServiceCard
             icon={<Home className="h-6 w-6" />}
             title="In-Home Dog Sitting"
-            body="We stay overnight in your home so your dog keeps their bed, their schedule, and their routine — no kennel anxiety."
-          />
-          <ServiceCard
-            icon={<Heart className="h-6 w-6" />}
-            title="Daily Visits & Walks"
-            body="Drop-in care, meals, medication, playtime and unhurried neighborhood walks while you're at work or away."
+            body="We stay overnight in your home so your dog keeps their bed, their schedule, and their people — no kennel, no unfamiliar house. Feeding, medication and daily walks on their normal routine are all included."
           />
           <ServiceCard
             icon={<ShieldCheck className="h-6 w-6" />}
             title="House Sitting"
-            body="Plants watered, mail collected, lights rotated, packages brought inside. Your home, lived in and looked after."
+            body="Plants watered, mail collected, lights rotated, packages brought inside. Your home lived in and looked after while you're away — bundled with dog sitting or on its own."
           />
         </div>
+        <p className="mt-8 text-center text-sm text-muted-foreground max-w-2xl mx-auto">
+          Please note: we're not a dog-walking or drop-in service. Walks are part of the house-sit package while we're staying with your dog.
+        </p>
       </Section>
 
       {/* Gallery */}
