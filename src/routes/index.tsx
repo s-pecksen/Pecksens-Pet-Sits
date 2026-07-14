@@ -133,14 +133,15 @@ function Index() {
           </div>
           <div className="relative">
             <div className="absolute -inset-6 rounded-[2.5rem] bg-accent/40 blur-2xl" aria-hidden />
-            <img
-              src={heroImg}
-              alt="A dog resting comfortably at home"
-              width={1600}
-              height={1200}
-              className="relative rounded-[2rem] shadow-2xl shadow-clay/20 ring-1 ring-border object-cover aspect-[4/3]"
-              fetchPriority="high"
-            />
+            <div
+              role="img"
+              aria-label="Hero photo placeholder"
+              className="relative rounded-[2rem] shadow-2xl shadow-clay/20 ring-1 ring-dashed ring-border bg-muted aspect-[4/3] flex flex-col items-center justify-center text-center px-6"
+            >
+              <ImageIcon className="h-10 w-10 text-muted-foreground/60" aria-hidden />
+              <p className="mt-3 text-sm font-medium text-muted-foreground/90">Hero photo goes here</p>
+              <p className="mt-1 text-xs text-muted-foreground/70">4:3 landscape (approx. 1600×1200)</p>
+            </div>
             <div className="absolute -bottom-5 -left-5 rounded-2xl bg-card px-5 py-4 shadow-xl ring-1 ring-border flex items-center gap-3">
               <Logo className="h-12 w-12" />
               <div>
