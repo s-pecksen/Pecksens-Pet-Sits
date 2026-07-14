@@ -3,36 +3,23 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 
+// Placeholder reviews — swap the `quote`, `name`, and `pet` fields with your
+// real client testimonials when you take this over to your code editor.
 const reviews = [
   {
-    quote:
-      "We came home to a happy dog and a spotless house. Modern Sit treats Biscuit like family — daily photo updates and all.",
-    name: "Hannah & Marco",
-    pet: "Biscuit, Golden Retriever",
+    quote: "Client testimonial goes here. Replace this quote with a real review.",
+    name: "Client Name",
+    pet: "Dog Name, Breed",
   },
   {
-    quote:
-      "Thoughtful, professional, and genuinely warm. Our anxious rescue actually looked forward to their visits.",
-    name: "Priya S.",
-    pet: "Juno, Rescue Mix",
+    quote: "Client testimonial goes here. Replace this quote with a real review.",
+    name: "Client Name",
+    pet: "Dog Name, Breed",
   },
   {
-    quote:
-      "Booking was effortless, communication was perfect, and Sadie was clearly adored. We won't use anyone else.",
-    name: "The Whitfields",
-    pet: "Sadie, Border Collie",
-  },
-  {
-    quote:
-      "They handle medications, routines and quirks with such care. Truly modern, truly trustworthy.",
-    name: "Daniel R.",
-    pet: "Murphy, Senior Lab",
-  },
-  {
-    quote:
-      "Best sitters we've ever hired — full stop. The house was tidier than we left it.",
-    name: "Alex & Jamie",
-    pet: "Pepper, Goldendoodle",
+    quote: "Client testimonial goes here. Replace this quote with a real review.",
+    name: "Client Name",
+    pet: "Dog Name, Breed",
   },
 ];
 
