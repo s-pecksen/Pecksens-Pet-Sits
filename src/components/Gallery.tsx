@@ -1,17 +1,17 @@
-import g1 from "@/assets/gallery-1.jpg";
-import g2 from "@/assets/gallery-2.jpg";
-import g3 from "@/assets/gallery-3.jpg";
-import g4 from "@/assets/gallery-4.jpg";
-import g5 from "@/assets/gallery-5.jpg";
-import g6 from "@/assets/gallery-6.jpg";
+// Photo frames for the gallery. Real photos will be dropped in here later.
+// Aspect ratio guide (each frame renders at 1:1 — square):
+//   - Large feature tile (index 0): square, upload at 1600×1600
+//   - Wide tile (index 3):          2:1 landscape, upload at 2000×1000
+//   - All other tiles:              square, upload at 1200×1200
+// Any oversize photo will be object-cover cropped to fit.
 
-const photos = [
-  { src: g1, alt: "Chocolate lab relaxing on a cream rug", span: "md:col-span-2 md:row-span-2" },
-  { src: g2, alt: "Fluffy goldendoodle on an autumn walk", span: "" },
-  { src: g3, alt: "Dachshund napping on a knit blanket", span: "" },
-  { src: g4, alt: "Border collie chasing a tennis ball", span: "md:col-span-2" },
-  { src: g5, alt: "Australian shepherd portrait", span: "" },
-  { src: g6, alt: "Beagle in a sunny kitchen", span: "" },
+const photos: { alt: string; span: string; ratio: string }[] = [
+  { alt: "Feature photo — square (1:1)", span: "md:col-span-2 md:row-span-2", ratio: "1:1" },
+  { alt: "Square photo (1:1)", span: "", ratio: "1:1" },
+  { alt: "Square photo (1:1)", span: "", ratio: "1:1" },
+  { alt: "Wide photo (2:1)", span: "md:col-span-2", ratio: "2:1" },
+  { alt: "Square photo (1:1)", span: "", ratio: "1:1" },
+  { alt: "Square photo (1:1)", span: "", ratio: "1:1" },
 ];
 
 export function Gallery() {
@@ -20,16 +20,12 @@ export function Gallery() {
       {photos.map((p, i) => (
         <figure
           key={i}
-          className={`group relative overflow-hidden rounded-2xl ring-1 ring-border bg-muted ${p.span}`}
+          className={`relative overflow-hidden rounded-2xl ring-1 ring-border bg-muted flex items-center justify-center ${p.span}`}
+          aria-label={p.alt}
         >
-          <img
-            src={p.src}
-            alt={p.alt}
-            loading="lazy"
-            width={1024}
-            height={1024}
-            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-          />
+          <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground/70">
+            Photo · {p.ratio}
+          </span>
         </figure>
       ))}
     </div>
