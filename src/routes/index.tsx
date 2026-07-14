@@ -1,11 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Toaster } from "@/components/ui/sonner";
-import { Home, ShieldCheck, PawPrint, Mail, MapPin } from "lucide-react";
+import { Home, ShieldCheck, PawPrint, Mail, MapPin, ImageIcon } from "lucide-react";
 import { Logo } from "@/components/Logo";
 import { Gallery } from "@/components/Gallery";
 import { ConsultationForm } from "@/components/ConsultationForm";
 import { FaqSection } from "@/components/FaqSection";
-import heroImg from "@/assets/hero-dogs.jpg";
 import pawPattern from "@/assets/paw-pattern.png.asset.json";
 
 const EMAIL = "modernproblemsolvers@gmail.com";
