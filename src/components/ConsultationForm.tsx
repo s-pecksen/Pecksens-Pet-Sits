@@ -33,7 +33,7 @@ export function ConsultationForm() {
     const d = parsed.data;
     const subject = `Consultation Request — ${d.name}`;
     const body =
-      `Hi Modern Sit,\n\nI'd like to request a consultation.\n\n` +
+      `Hi Pecksen's Pet-Sits,\n\nI'd like to request a consultation.\n\n` +
       `Name: ${d.name}\n` +
       `Email: ${d.email}\n` +
       `Phone: ${d.phone}\n` +

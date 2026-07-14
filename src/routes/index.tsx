@@ -1,28 +1,28 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Toaster } from "@/components/ui/sonner";
-import { Heart, Home, ShieldCheck, PawPrint, Mail, MapPin } from "lucide-react";
+import { Home, ShieldCheck, PawPrint, Mail, MapPin } from "lucide-react";
 import { Logo } from "@/components/Logo";
 import { ReviewsCarousel } from "@/components/ReviewsCarousel";
 import { Gallery } from "@/components/Gallery";
 import { ConsultationForm } from "@/components/ConsultationForm";
 import { FaqSection } from "@/components/FaqSection";
-import heroImg from "@/assets/hero-dogs.jpg";
 import pawPattern from "@/assets/paw-pattern.png.asset.json";
 
 const EMAIL = "modernproblemsolvers@gmail.com";
-const MAILTO = `mailto:${EMAIL}?subject=${encodeURIComponent("Hello Modern Sit!")}`;
+const MAILTO = `mailto:${EMAIL}?subject=${encodeURIComponent("Hello Pecksen's Pet-Sits!")}`;
+const BRAND = "Pecksen's Pet-Sits";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Modern Sit Dog Care — Trusted Dog & House Sitting" },
+      { title: "Pecksen's Pet-Sits — Trusted Dog & House Sitting" },
       {
         name: "description",
         content:
-          "Modern Sit Dog Care offers thoughtful, professional dog sitting and house sitting. Calm care, daily updates, and a home that feels lived in.",
+          "Pecksen's Pet-Sits offers thoughtful, professional in-home dog and house sitting. Calm care, daily updates, and a home that feels lived in.",
       },
-      { property: "og:title", content: "Modern Sit Dog Care" },
-      { property: "og:description", content: "Trusted dog & house sitting with warmth and care." },
+      { property: "og:title", content: "Pecksen's Pet-Sits" },
+      { property: "og:description", content: "Trusted in-home dog & house sitting." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://modernsitdog.care" },
     ],
@@ -30,6 +30,7 @@ export const Route = createFileRoute("/")({
   }),
   component: Index,
 });
+
 
 function Section({
   id,
@@ -77,7 +78,7 @@ function Index() {
           <a href="#top" className="flex items-center gap-3">
             <Logo className="h-10 w-10" />
             <span className="font-display text-lg font-semibold tracking-tight">
-              Modern Sit <span className="text-primary">Dog Care</span>
+              Pecksen's <span className="text-primary">Pet-Sits</span>
             </span>
           </a>
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
@@ -136,26 +137,26 @@ function Index() {
               </a>
             </div>
             <dl className="mt-10 grid grid-cols-3 gap-6 max-w-md">
-              <Stat n="120+" label="Happy dogs" />
-              <Stat n="6yrs" label="Sitting together" />
-              <Stat n="5★" label="Avg. review" />
+              <Stat n="4yrs" label="Sitting together" />
+              <Stat n="60+" label="House-sits" />
+              <Stat n="30+" label="Dogs cared for" />
             </dl>
           </div>
           <div className="relative">
             <div className="absolute -inset-6 rounded-[2.5rem] bg-accent/40 blur-2xl" aria-hidden />
-            <img
-              src={heroImg}
-              alt="A golden retriever and a small terrier resting together in a sunlit home"
-              width={1600}
-              height={1200}
-              className="relative rounded-[2rem] shadow-2xl shadow-clay/20 ring-1 ring-border object-cover aspect-[4/3]"
-              fetchPriority="high"
-            />
+            <figure
+              className="relative rounded-[2rem] shadow-2xl shadow-clay/20 ring-1 ring-border bg-muted aspect-[4/3] flex items-center justify-center overflow-hidden"
+              aria-label="Hero photo placeholder"
+            >
+              <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground/70">
+                Hero photo · 4:3 (recommended 1600×1200)
+              </span>
+            </figure>
             <div className="absolute -bottom-5 -left-5 rounded-2xl bg-card px-5 py-4 shadow-xl ring-1 ring-border flex items-center gap-3">
               <Logo className="h-12 w-12" />
               <div>
-                <p className="text-sm font-semibold">Modern Sit</p>
-                <p className="text-xs text-muted-foreground">Insured · Background-checked</p>
+                <p className="text-sm font-semibold">{BRAND}</p>
+                <p className="text-xs text-muted-foreground">In-home dog &amp; house sitting</p>
               </div>
             </div>
           </div>
@@ -166,26 +167,24 @@ function Index() {
       <Section
         id="services"
         eyebrow="What we do"
-        title="Care that fits into your life"
-        intro="Two specialties, one standard: attentive, thoughtful, and quietly professional."
+        title="In-home sitting, done properly"
+        intro="We stay in your home for the length of your trip. Your dog keeps their routine, and your house stays lived-in."
       >
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           <ServiceCard
             icon={<Home className="h-6 w-6" />}
             title="In-Home Dog Sitting"
-            body="We stay overnight in your home so your dog keeps their bed, their schedule, and their routine — no kennel anxiety."
-          />
-          <ServiceCard
-            icon={<Heart className="h-6 w-6" />}
-            title="Daily Visits & Walks"
-            body="Drop-in care, meals, medication, playtime and unhurried neighborhood walks while you're at work or away."
+            body="We stay overnight in your home so your dog keeps their bed, their schedule, and their people — no kennel, no unfamiliar house. Feeding, medication and daily walks on their normal routine are all included."
           />
           <ServiceCard
             icon={<ShieldCheck className="h-6 w-6" />}
             title="House Sitting"
-            body="Plants watered, mail collected, lights rotated, packages brought inside. Your home, lived in and looked after."
+            body="Plants watered, mail collected, lights rotated, packages brought inside. Your home lived in and looked after while you're away — bundled with dog sitting or on its own."
           />
         </div>
+        <p className="mt-8 text-center text-sm text-muted-foreground max-w-2xl mx-auto">
+          Please note: we're not a dog-walking or drop-in service. Walks are part of the house-sit package while we're staying with your dog.
+        </p>
       </Section>
 
       {/* Gallery */}
@@ -253,10 +252,10 @@ function Index() {
         <div className="mx-auto max-w-6xl px-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <Logo className="h-9 w-9" />
-            <span className="font-display font-semibold">Modern Sit Dog Care</span>
+            <span className="font-display font-semibold">Pecksen's Pet-Sits</span>
           </div>
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Modern Sit Dog Care · modernsitdog.care
+            © {new Date().getFullYear()} Pecksen's Pet-Sits · modernsitdog.care
           </p>
           <a href={MAILTO} className="text-sm font-medium text-primary hover:underline">
             {EMAIL}
