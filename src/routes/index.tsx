@@ -252,10 +252,10 @@ function Index() {
         <div className="mx-auto max-w-6xl px-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <Logo className="h-9 w-9" />
-            <span className="font-display font-semibold">Modern Sit Dog Care</span>
+            <span className="font-display font-semibold">Pecksen's Pet-Sits</span>
           </div>
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Modern Sit Dog Care · modernsitdog.care
+            © {new Date().getFullYear()} Pecksen's Pet-Sits · modernsitdog.care
           </p>
           <a href={MAILTO} className="text-sm font-medium text-primary hover:underline">
             {EMAIL}
