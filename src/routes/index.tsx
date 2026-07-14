@@ -78,7 +78,7 @@ function Index() {
           <a href="#top" className="flex items-center gap-3">
             <Logo className="h-10 w-10" />
             <span className="font-display text-lg font-semibold tracking-tight">
-              Modern Sit <span className="text-primary">Dog Care</span>
+              Pecksen's <span className="text-primary">Pet-Sits</span>
             </span>
           </a>
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
