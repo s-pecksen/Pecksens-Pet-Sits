@@ -6,23 +6,23 @@ import { ReviewsCarousel } from "@/components/ReviewsCarousel";
 import { Gallery } from "@/components/Gallery";
 import { ConsultationForm } from "@/components/ConsultationForm";
 import { FaqSection } from "@/components/FaqSection";
-import heroImg from "@/assets/hero-dogs.jpg";
 import pawPattern from "@/assets/paw-pattern.png.asset.json";
 
 const EMAIL = "modernproblemsolvers@gmail.com";
-const MAILTO = `mailto:${EMAIL}?subject=${encodeURIComponent("Hello Modern Sit!")}`;
+const MAILTO = `mailto:${EMAIL}?subject=${encodeURIComponent("Hello Pecksen's Pet-Sits!")}`;
+const BRAND = "Pecksen's Pet-Sits";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Modern Sit Dog Care — Trusted Dog & House Sitting" },
+      { title: "Pecksen's Pet-Sits — Trusted Dog & House Sitting" },
       {
         name: "description",
         content:
-          "Modern Sit Dog Care offers thoughtful, professional dog sitting and house sitting. Calm care, daily updates, and a home that feels lived in.",
+          "Pecksen's Pet-Sits offers thoughtful, professional in-home dog and house sitting. Calm care, daily updates, and a home that feels lived in.",
       },
-      { property: "og:title", content: "Modern Sit Dog Care" },
-      { property: "og:description", content: "Trusted dog & house sitting with warmth and care." },
+      { property: "og:title", content: "Pecksen's Pet-Sits" },
+      { property: "og:description", content: "Trusted in-home dog & house sitting." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://modernsitdog.care" },
     ],
@@ -30,6 +30,7 @@ export const Route = createFileRoute("/")({
   }),
   component: Index,
 });
+
 
 function Section({
   id,
