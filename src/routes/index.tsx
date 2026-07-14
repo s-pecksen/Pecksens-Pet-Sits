@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Toaster } from "@/components/ui/sonner";
-import { Heart, Home, ShieldCheck, PawPrint, Mail, MapPin } from "lucide-react";
+import { Home, ShieldCheck, PawPrint, Mail, MapPin } from "lucide-react";
 import { Logo } from "@/components/Logo";
 import { ReviewsCarousel } from "@/components/ReviewsCarousel";
 import { Gallery } from "@/components/Gallery";
