@@ -38,57 +38,69 @@
 }
 
 :root {
-  --radius: 1rem;
-  /* Warm, inviting palette: cream, clay/terracotta, soft blush (matches logo) */
-  --background: oklch(0.985 0.012 75);          /* warm cream */
-  --foreground: oklch(0.255 0.025 50);          /* deep warm brown */
+  --radius: 0.25rem;
+  /* Brand palette pulled from the supplied card: ink, white, and warm tan. */
+  --background: oklch(0.975 0.012 78);
+  --foreground: oklch(0.12 0.01 50);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.255 0.025 50);
+  --card-foreground: oklch(0.12 0.01 50);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.255 0.025 50);
-  --primary: oklch(0.55 0.115 38);              /* warm terracotta */
+  --primary: oklch(0.67 0.09 55); /* business-card tan */
   --primary-foreground: oklch(0.985 0.012 75);
-  --secondary: oklch(0.94 0.025 60);            /* soft sand */
-  --secondary-foreground: oklch(0.32 0.04 50);
-  --muted: oklch(0.95 0.018 70);
-  --muted-foreground: oklch(0.48 0.025 55);
-  --accent: oklch(0.88 0.055 20);               /* blush pink (logo) */
-  --accent-foreground: oklch(0.28 0.04 30);
+  --secondary: oklch(0.93 0.025 75);
+  --secondary-foreground: oklch(0.2 0.02 50);
+  --muted: oklch(0.94 0.018 75);
+  --muted-foreground: oklch(0.4 0.02 50);
+  --accent: oklch(0.86 0.06 70);
+  --accent-foreground: oklch(0.16 0.02 45);
   --destructive: oklch(0.55 0.2 27);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.9 0.02 60);
+  --border: oklch(0.82 0.025 65);
   --input: oklch(0.92 0.018 65);
-  --ring: oklch(0.55 0.115 38);
+  --ring: oklch(0.67 0.09 55);
 
-  --blush: oklch(0.88 0.055 20);
-  --clay: oklch(0.7 0.085 45);
-  --cream: oklch(0.97 0.018 80);
+  --blush: oklch(0.86 0.06 70);
+  --clay: oklch(0.67 0.09 55);
+  --cream: oklch(0.975 0.012 78);
 
-  --font-display: "Fraunces", Georgia, serif;
+  --font-display: "Inter", system-ui, sans-serif;
   --font-sans: "Inter", system-ui, sans-serif;
 }
 
 @layer base {
-  * { border-color: var(--color-border); }
-  html { scroll-behavior: smooth; }
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.04em;
+  }
 }
 
 @font-face {
   font-family: "Fraunces";
-  src: url("https://fonts.gstatic.com/s/fraunces/v32/6NUh8FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk.woff2") format("woff2");
+  src: url("https://fonts.gstatic.com/s/fraunces/v32/6NUh8FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk.woff2")
+    format("woff2");
   font-weight: 400 900;
   font-display: swap;
 }
 @font-face {
   font-family: "Inter";
-  src: url("https://fonts.gstatic.com/s/inter/v18/UcCo3FwrK3iLTcvneQg7Ca725JhhKnOqk.woff2") format("woff2");
+  src: url("https://fonts.gstatic.com/s/inter/v18/UcCo3FwrK3iLTcvneQg7Ca725JhhKnOqk.woff2")
+    format("woff2");
   font-weight: 300 800;
   font-display: swap;
 }

@@ -38,7 +38,11 @@ const faqs = [
 
 export function FaqSection() {
   return (
-    <Accordion type="single" collapsible className="w-full divide-y divide-border rounded-2xl bg-card ring-1 ring-border">
+    <Accordion
+      type="single"
+      collapsible
+      className="w-full divide-y divide-border rounded-2xl bg-card ring-1 ring-border"
+    >
       {faqs.map((f, i) => (
         <AccordionItem key={i} value={`item-${i}`} className="px-6 border-b-0">
           <AccordionTrigger className="text-left text-lg font-display text-foreground hover:no-underline">

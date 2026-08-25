@@ -6,6 +6,7 @@ import { Gallery } from "@/components/Gallery";
 import { ConsultationForm } from "@/components/ConsultationForm";
 import { FaqSection } from "@/components/FaqSection";
 import pawPattern from "@/assets/paw-pattern.png.asset.json";
+import pawLogo from "@/assets/paw-logo.png.asset.json";
 
 const EMAIL = "modernproblemsolvers@gmail.com";
 const MAILTO = `mailto:${EMAIL}?subject=${encodeURIComponent("Hello Pecksen's Pet-Sits!")}`;
@@ -33,11 +34,13 @@ function Section({
       <div className="mx-auto max-w-6xl px-6">
         <div className="mx-auto max-w-2xl text-center mb-12 md:mb-16">
           {eyebrow && (
-            <span className="inline-block text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+            <span className="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.22em] text-primary">
+              <span className="h-px w-8 bg-primary" />
               {eyebrow}
+              <span className="h-px w-8 bg-primary" />
             </span>
           )}
-          <h2 className="mt-3 text-4xl md:text-5xl font-display font-medium text-foreground">
+          <h2 className="mt-4 text-4xl md:text-5xl font-display font-bold text-foreground">
             {title}
           </h2>
           {intro && <p className="mt-4 text-lg text-muted-foreground">{intro}</p>}
@@ -54,15 +57,15 @@ function Index() {
       <Toaster richColors position="top-center" />
 
       {/* Header */}
-      <header className="sticky top-0 z-40 backdrop-blur-md bg-background/80 border-b border-border">
-        <div className="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
+      <header className="sticky top-0 z-40 border-b border-border bg-white/95 backdrop-blur-md">
+        <div className="mx-auto max-w-6xl px-6 h-[4.5rem] flex items-center justify-between">
           <a href="#top" className="flex items-center gap-3">
-            <Logo className="h-10 w-10" />
-            <span className="font-display text-lg font-semibold tracking-tight">
+            <Logo className="h-11 w-11" />
+            <span className="font-display text-lg font-bold tracking-tight">
               Pecksen's <span className="text-primary">Pet-Sits</span>
             </span>
           </a>
-          <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
+          <nav className="hidden md:flex items-center gap-8 text-[0.7rem] font-bold uppercase tracking-[0.16em] text-muted-foreground">
             <a href="#services" className="hover:text-foreground transition-colors">
               Services
             </a>
@@ -78,7 +81,7 @@ function Index() {
           </nav>
           <a
             href={MAILTO}
-            className="hidden sm:inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-md shadow-primary/20 hover:bg-primary/90 transition-colors"
+            className="hidden sm:inline-flex items-center gap-2 rounded-sm bg-foreground px-5 py-3 text-xs font-bold uppercase tracking-[0.12em] text-white shadow-md shadow-black/10 hover:bg-primary transition-colors"
           >
             <Mail className="h-4 w-4" /> Contact Us
           </a>
@@ -86,9 +89,12 @@ function Index() {
       </header>
 
       {/* Hero */}
-      <section id="top" className="relative py-20">
+      <section
+        id="top"
+        className="relative overflow-hidden border-b border-border bg-background py-16 md:py-24"
+      >
         <div
-          className="absolute inset-0 opacity-[0.06] pointer-events-none"
+          className="absolute inset-0 opacity-[0.035] pointer-events-none"
           style={{
             backgroundImage: `url(${pawPattern.url})`,
             backgroundSize: "220px",
@@ -96,34 +102,46 @@ function Index() {
           }}
           aria-hidden
         />
-        <div className="relative mx-auto max-w-4xl px-6">
-          <div className="rounded-3xl bg-card ring-1 ring-border shadow-lg p-12 text-center">
-            <div className="mx-auto max-w-md">
-              <Logo className="mx-auto h-28 w-28" rounded={false} />
-              <h1 className="mt-6 text-5xl font-display font-medium tracking-tight leading-tight">
+        <img
+          src={pawLogo.url}
+          alt=""
+          className="absolute -right-16 top-8 hidden w-64 opacity-[0.12] md:block lg:right-12 lg:w-80"
+          aria-hidden
+        />
+        <div className="relative mx-auto max-w-5xl px-6">
+          <div className="relative overflow-hidden border-2 border-foreground bg-white p-8 text-center shadow-[10px_10px_0_var(--clay)] md:p-16">
+            <div
+              className="absolute left-6 top-6 h-10 w-10 border-l-2 border-t-2 border-primary md:left-8 md:top-8"
+              aria-hidden
+            />
+            <div
+              className="absolute bottom-6 right-6 h-10 w-10 border-b-2 border-r-2 border-primary md:bottom-8 md:right-8"
+              aria-hidden
+            />
+            <div className="mx-auto max-w-2xl">
+              <Logo className="mx-auto h-24 w-24 md:h-28 md:w-28" rounded={false} />
+              <h1 className="mt-6 text-5xl font-display font-bold tracking-tight leading-[0.95] md:text-7xl">
                 Pecksen's
                 <br />
-                <span className="text-5xl" style={{ color: "var(--clay)" }}>
-                  Pet-Sits
-                </span>
+                <span className="text-5xl text-primary md:text-7xl">Pet-Sits</span>
               </h1>
-              <p className="mt-4 text-sm uppercase tracking-wider text-foreground/90 font-semibold">
+              <p className="mt-6 text-xs uppercase tracking-[0.24em] text-foreground font-bold md:text-sm">
                 SERVING VANCOUVER'S NORTH SHORE
               </p>
-              <p className="mt-6 text-lg text-muted-foreground">
+              <p className="mx-auto mt-7 max-w-xl text-lg leading-relaxed text-muted-foreground md:text-xl">
                 We're a husband-and-wife team who treat your pup like ours — calm routines, daily
                 updates, and a home that feels lived in.
               </p>
               <div className="mt-8 flex justify-center gap-3">
                 <a
                   href="#consultation"
-                  className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-md hover:bg-primary/90 transition-colors"
+                  className="inline-flex items-center gap-2 rounded-sm bg-primary px-6 py-3.5 text-xs font-bold uppercase tracking-[0.1em] text-primary-foreground shadow-md hover:bg-foreground transition-colors"
                 >
                   Request a Consultation
                 </a>
                 <a
                   href={MAILTO}
-                  className="inline-flex items-center gap-2 rounded-full bg-card px-6 py-3 text-sm font-semibold ring-1 ring-border"
+                  className="inline-flex items-center gap-2 rounded-sm bg-white px-6 py-3.5 text-xs font-bold uppercase tracking-[0.1em] text-foreground ring-1 ring-foreground/20 hover:ring-primary transition-colors"
                 >
                   <Mail className="h-4 w-4" /> Contact Us
                 </a>
@@ -164,7 +182,7 @@ function Index() {
         eyebrow="Our charges"
         title="A few of our favorite faces"
         intro="Every dog gets the spotlight. Here are some recent friends we've cared for."
-        className="bg-secondary/40"
+        className="bg-secondary"
       >
         <Gallery />
       </Section>
@@ -184,7 +202,7 @@ function Index() {
         id="faq"
         eyebrow="Good to know"
         title="Frequently asked questions"
-        className="bg-secondary/40"
+        className="bg-secondary"
       >
         <div className="max-w-3xl mx-auto">
           <FaqSection />
@@ -194,25 +212,33 @@ function Index() {
       {/* Consultation */}
       <section id="consultation" className="py-20 md:py-28">
         <div className="mx-auto max-w-5xl px-6">
-          <div className="rounded-3xl bg-card ring-1 ring-border shadow-[0_30px_80px_-40px_rgba(120,60,30,0.3)] overflow-hidden grid md:grid-cols-5">
-            <div className="md:col-span-2 bg-primary text-primary-foreground p-8 md:p-10 relative overflow-hidden">
+          <div className="overflow-hidden border-2 border-foreground bg-white shadow-[10px_10px_0_var(--clay)] grid md:grid-cols-5">
+            <div className="md:col-span-2 bg-foreground text-white p-8 md:p-10 relative overflow-hidden">
               <div
                 className="absolute inset-0 opacity-10 pointer-events-none"
                 style={{ backgroundImage: `url(${pawPattern.url})`, backgroundSize: "140px" }}
                 aria-hidden
               />
-              <h3 className="font-display text-3xl md:text-4xl">Let's plan your trip.</h3>
-              <p className="mt-4 text-primary-foreground/85 leading-relaxed">
+              <img
+                src={pawLogo.url}
+                alt=""
+                className="absolute -bottom-8 -right-8 w-40 opacity-20"
+                aria-hidden
+              />
+              <h3 className="relative font-display text-3xl font-bold md:text-4xl">
+                Let's plan your trip.
+              </h3>
+              <p className="relative mt-4 text-white/75 leading-relaxed">
                 Tell us a little about your dog and your dates. We'll reply within one business day
                 to set up a free meet-and-greet.
               </p>
               <ul className="mt-8 space-y-3 text-sm">
                 <li className="flex items-center gap-3">
-                  <Mail className="h-4 w-4 opacity-80" />
+                  <Mail className="h-4 w-4 text-primary" />
                   {EMAIL}
                 </li>
                 <li className="flex items-center gap-3">
-                  <MapPin className="h-4 w-4 opacity-80" />
+                  <MapPin className="h-4 w-4 text-primary" />
                   Locally based · serving nearby neighborhoods
                 </li>
               </ul>

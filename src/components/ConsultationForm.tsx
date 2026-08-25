@@ -40,7 +40,7 @@ export function ConsultationForm() {
       `Requested Dates: ${d.dates}\n\n` +
       `About my dog:\n${d.dog}\n\nThank you!`;
     const mailto = `mailto:${RECIPIENT}?subject=${encodeURIComponent(
-      subject
+      subject,
     )}&body=${encodeURIComponent(body)}`;
     window.location.href = mailto;
     setTimeout(() => {
