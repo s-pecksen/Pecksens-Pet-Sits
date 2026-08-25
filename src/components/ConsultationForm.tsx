@@ -10,7 +10,7 @@ const schema = z.object({
   dog: z.string().trim().min(1, "Tell us about your dog").max(2000),
 });
 
-const RECIPIENT = "modernproblemsolvers@gmail.com";
+const RECIPIENT = "petsitting@pecksen.ca";
 
 export function ConsultationForm() {
   const [submitting, setSubmitting] = useState(false);

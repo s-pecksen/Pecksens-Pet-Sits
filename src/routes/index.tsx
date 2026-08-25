@@ -5,10 +5,10 @@ import { ReviewsCarousel } from "@/components/ReviewsCarousel";
 import { Gallery } from "@/components/Gallery";
 import { ConsultationForm } from "@/components/ConsultationForm";
 import { FaqSection } from "@/components/FaqSection";
-import pawPattern from "@/assets/paw-pattern.png.asset.json";
-import pawLogo from "@/assets/paw-logo.png.asset.json";
+import pawLogo from "@/assets/Transparent Paw Print Logo.png";
 
-const EMAIL = "modernproblemsolvers@gmail.com";
+const EMAIL = "petsitting@pecksen.ca";
+const WEBSITE = "https://pecksen.ca";
 const MAILTO = `mailto:${EMAIL}?subject=${encodeURIComponent("Hello Pecksen's Pet-Sits!")}`;
 const BRAND = "Pecksen's Pet-Sits";
 
@@ -96,14 +96,14 @@ function Index() {
         <div
           className="absolute inset-0 opacity-[0.035] pointer-events-none"
           style={{
-            backgroundImage: `url(${pawPattern.url})`,
+            backgroundImage: `url(${pawLogo})`,
             backgroundSize: "220px",
             backgroundRepeat: "repeat",
           }}
           aria-hidden
         />
         <img
-          src={pawLogo.url}
+          src={pawLogo}
           alt=""
           className="absolute -right-16 top-8 hidden w-64 opacity-[0.12] md:block lg:right-12 lg:w-80"
           aria-hidden
@@ -130,7 +130,7 @@ function Index() {
               </p>
               <p className="mx-auto mt-7 max-w-xl text-lg leading-relaxed text-muted-foreground md:text-xl">
                 We're a husband-and-wife team who treat your pup like ours — calm routines, daily
-                updates, and a home that feels lived in.
+                updates, and a home that feels secure, protected, and cared for while you're away.
               </p>
               <div className="mt-8 flex justify-center gap-3">
                 <a
@@ -156,7 +156,7 @@ function Index() {
         id="services"
         eyebrow="What we do"
         title="In-home sitting, done properly"
-        intro="We stay in your home for the length of your trip. Your dog keeps their routine, and your house stays lived-in."
+        intro="We stay in your home for the length of your trip. Your dog keeps their routine, and your home stays secure, cared for, and clean."
       >
         <div className="grid md:grid-cols-2 gap-6">
           <ServiceCard
@@ -167,7 +167,7 @@ function Index() {
           <ServiceCard
             icon={<ShieldCheck className="h-6 w-6" />}
             title="House Sitting"
-            body="Plants watered, mail collected, lights rotated, packages brought inside. Your home lived in and looked after while you're away — bundled with dog sitting or on its own."
+            body="Plants watered, mail collected, and packages brought inside. Your home stays secure, protected, and looked after while you're away — bundled with dog sitting or on its own."
           />
         </div>
         <p className="mt-8 text-center text-sm text-muted-foreground max-w-2xl mx-auto">
@@ -216,13 +216,7 @@ function Index() {
             <div className="md:col-span-2 bg-foreground text-white p-8 md:p-10 relative overflow-hidden">
               <div
                 className="absolute inset-0 opacity-10 pointer-events-none"
-                style={{ backgroundImage: `url(${pawPattern.url})`, backgroundSize: "140px" }}
-                aria-hidden
-              />
-              <img
-                src={pawLogo.url}
-                alt=""
-                className="absolute -bottom-8 -right-8 w-40 opacity-20"
+                style={{ backgroundImage: `url(${pawLogo})`, backgroundSize: "140px" }}
                 aria-hidden
               />
               <h3 className="relative font-display text-3xl font-bold md:text-4xl">
@@ -258,7 +252,10 @@ function Index() {
             <span className="font-display font-semibold">Pecksen's Pet-Sits</span>
           </div>
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Pecksen's Pet-Sits · modernsitdog.care
+            © {new Date().getFullYear()} Pecksen's Pet-Sits ·{" "}
+            <a href={WEBSITE} className="hover:text-foreground hover:underline">
+              pecksen.ca
+            </a>
           </p>
           <a href={MAILTO} className="text-sm font-medium text-primary hover:underline">
             {EMAIL}

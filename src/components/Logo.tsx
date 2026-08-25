@@ -1,8 +1,8 @@
-import logo from "@/assets/paw-logo.png.asset.json";
+import logo from "@/assets/Transparent Paw Print Logo.png";
 
 export function Logo({
   className = "h-10 w-10",
-  rounded = true,
+  rounded = false,
 }: {
   className?: string;
   rounded?: boolean;
@@ -10,9 +10,9 @@ export function Logo({
   const shapeClass = rounded ? "rounded-full" : "rounded-none";
   return (
     <img
-      src={logo.url}
+      src={logo}
       alt="Pecksen's Pet-Sits logo"
-      className={`${className} ${shapeClass} object-cover shadow-sm ring-1 ring-border`}
+      className={`${className} ${shapeClass} object-cover`}
       width={80}
       height={80}
     />
