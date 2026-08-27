@@ -11,13 +11,15 @@ const schema = z.object({
 });
 
 const RECIPIENT = "petsitting@pecksen.ca";
+const FORM_ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT ?? "https://formspree.io/f/mljerklz";
 
 export function ConsultationForm() {
   const [submitting, setSubmitting] = useState(false);
 
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const fd = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const fd = new FormData(form);
     const parsed = schema.safeParse({
       name: fd.get("name"),
       email: fd.get("email"),
@@ -29,24 +31,37 @@ export function ConsultationForm() {
       toast.error(parsed.error.issues[0]?.message ?? "Please check the form.");
       return;
     }
+    if (fd.get("_gotcha")) {
+      return;
+    }
+
     setSubmitting(true);
-    const d = parsed.data;
-    const subject = `Consultation Request — ${d.name}`;
-    const body =
-      `Hi Pecksen's Pet-Sits,\n\nI'd like to request a consultation.\n\n` +
-      `Name: ${d.name}\n` +
-      `Email: ${d.email}\n` +
-      `Phone: ${d.phone}\n` +
-      `Requested Dates: ${d.dates}\n\n` +
-      `About my dog:\n${d.dog}\n\nThank you!`;
-    const mailto = `mailto:${RECIPIENT}?subject=${encodeURIComponent(
-      subject,
-    )}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailto;
-    setTimeout(() => {
-      toast.success("Opening your email app to send the request…");
+    try {
+      const response = await fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...parsed.data,
+          _gotcha: fd.get("_gotcha"),
+          _replyto: parsed.data.email,
+          _subject: `Consultation Request - ${parsed.data.name}`,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Form submission failed with status ${response.status}`);
+      }
+
+      form.reset();
+      toast.success(`Your request was sent to ${RECIPIENT}.`);
+    } catch {
+      toast.error("We couldn't send your request. Please try again or call us directly.");
+    } finally {
       setSubmitting(false);
-    }, 300);
+    }
   }
 
   return (
@@ -70,6 +85,14 @@ export function ConsultationForm() {
           className="rounded-xl border border-input bg-card px-4 py-3 text-foreground outline-none focus:ring-2 focus:ring-ring resize-y"
         />
       </label>
+      <input
+        type="text"
+        name="_gotcha"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="absolute -left-[9999px] h-px w-px overflow-hidden"
+      />
       <button
         type="submit"
         disabled={submitting}
@@ -78,8 +101,7 @@ export function ConsultationForm() {
         {submitting ? "Sending…" : "Request Consultation"}
       </button>
       <p className="text-xs text-muted-foreground">
-        Submitting opens your email client with the message ready to send to{" "}
-        <span className="font-medium">{RECIPIENT}</span>.
+        Your request will be sent directly to <span className="font-medium">{RECIPIENT}</span>.
       </p>
     </form>
   );
