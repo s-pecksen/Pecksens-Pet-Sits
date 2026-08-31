@@ -20,19 +20,19 @@ const faqs = [
   },
   {
     q: "What does a typical house-sit include?",
-    a: "Overnight stays in your home, walks for your dog, feeding to your schedule, medication administration, bringing in mail, watering plants, rotating lights, and leaving the house exactly as we found it (often tidier).",
+    a: "Overnight stays in your home, dog walks, feeding, and medication administration according to your schedule, bringing in mail, watering plants, and leaving the house looking even tidier than we found it. We also provide daily updates with photos and videos of your dog, and are reachable by phone at any time.",
   },
   {
     q: "How do you handle emergencies?",
-    a: "We always confirm your preferred vet and an emergency clinic before your trip. We carry pet first-aid supplies, are fully reachable by phone, and provide same-day updates if anything seems off.",
+    a: "We always confirm your preferred vet and an emergency clinic before your trip. We are trained in first-aid, are fully reachable by phone, and provide same-day updates if anything seems off.",
   },
   {
     q: "What areas do you cover?",
-    a: "We're based locally and serve the surrounding neighborhoods. Reach out with your address and dates and we'll confirm fit on the consultation call.",
+    a: "We're based in North Vancouver and currently serve Vancouver's North Shore, from Horseshoe Bay to Deep Cove. Reach out with your address and dates and we'll confirm fit on the consultation call.",
   },
   {
     q: "How do bookings and payment work?",
-    a: "Start with the consultation form below. After a quick meet-and-greet we'll send a written quote and booking confirmation. A deposit secures the dates; the balance is due at the end of the stay.",
+    a: "Start with the consultation form below. After a thorough meet-and-greet we'll send a written quote and booking confirmation. A deposit secures the dates; the balance is due by the first day of the sit.",
   },
 ];
 

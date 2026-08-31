@@ -110,14 +110,6 @@ function Index() {
         />
         <div className="relative mx-auto max-w-5xl px-6">
           <div className="relative overflow-hidden border-2 border-foreground bg-white p-8 text-center shadow-[10px_10px_0_var(--clay)] md:p-16">
-            <div
-              className="absolute left-6 top-6 h-10 w-10 border-l-2 border-t-2 border-primary md:left-8 md:top-8"
-              aria-hidden
-            />
-            <div
-              className="absolute bottom-6 right-6 h-10 w-10 border-b-2 border-r-2 border-primary md:bottom-8 md:right-8"
-              aria-hidden
-            />
             <div className="mx-auto max-w-2xl">
               <Logo className="mx-auto h-24 w-24 md:h-28 md:w-28" rounded={false} />
               <h1 className="mt-6 text-5xl font-display font-bold tracking-tight leading-[0.95] md:text-7xl">
@@ -162,7 +154,7 @@ function Index() {
           <ServiceCard
             icon={<Home className="h-6 w-6" />}
             title="In-Home Dog Sitting"
-            body="We stay overnight in your home so your dog keeps their bed, their schedule, and their people — no kennel, no unfamiliar house. Feeding, medication and daily walks on their normal routine are all included."
+            body="We stay overnight in your home so your dog keeps their bed, their schedule, and their comfort — no kennel, no unfamiliar house. Feeding, medication and daily walks on their normal routine are all included."
           />
           <ServiceCard
             icon={<ShieldCheck className="h-6 w-6" />}
@@ -223,8 +215,8 @@ function Index() {
                 Let's plan your trip.
               </h3>
               <p className="relative mt-4 text-white/75 leading-relaxed">
-                Tell us a little about your dog and your dates. We'll reply within one business day
-                to set up a free meet-and-greet.
+                Tell us a little about your dog and your dates. We'll reply within three business
+                days to set up a free meet-and-greet.
               </p>
               <ul className="mt-8 space-y-3 text-sm">
                 <li className="flex items-center gap-3">
@@ -233,7 +225,7 @@ function Index() {
                 </li>
                 <li className="flex items-center gap-3">
                   <MapPin className="h-4 w-4 text-primary" />
-                  Locally based · serving nearby neighborhoods
+                  Vancouver based · serving North Shore neighborhoods
                 </li>
               </ul>
             </div>

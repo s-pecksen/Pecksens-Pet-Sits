@@ -16,7 +16,7 @@ const reviews = [
   },
   {
     quote:
-      "Steven and Mary are always our first choice to take care of our dog, and they always do an amazing job. Their care and attention make it so much easier to be away, knowing our pup is in great hands. One of the things we appreciate most is how they keep us updated throughout the stay. They always send pictures, which gives us extra peace of mind and is such a thoughtful touch. It's clear they genuinely care about the pets they look after. On top of that, our house is always spotless when we return. It's such a great feeling to come home to a clean space and a happy dog. We highly recommend Steven and Mary to anyone looking for reliable, caring, and professional pet sitters!0",
+      "Steven and Mary are always our first choice to take care of our dog, and they always do an amazing job. Their care and attention make it so much easier to be away, knowing our pup is in great hands. One of the things we appreciate most is how they keep us updated throughout the stay. They always send pictures, which gives us extra peace of mind and is such a thoughtful touch. It's clear they genuinely care about the pets they look after. On top of that, our house is always spotless when we return. It's such a great feeling to come home to a clean space and a happy dog. We highly recommend Steven and Mary to anyone looking for reliable, caring, and professional pet sitters!",
   },
   {
     quote:
@@ -56,12 +56,9 @@ export function ReviewsCarousel() {
             <div key={i} className="min-w-0 flex-[0_0_100%] px-4 md:px-12">
               <figure className="mx-auto max-w-3xl rounded-3xl bg-card p-8 md:p-12 shadow-[0_20px_60px_-30px_rgba(120,60,30,0.25)] ring-1 ring-border">
                 <Quote className="h-8 w-8 text-primary/60" aria-hidden />
-                <blockquote className="mt-4 font-display text-2xl md:text-3xl leading-snug text-foreground">
+                <blockquote className="mt-4 font-display text-xl md:text-2xl leading-snug text-foreground">
                   &ldquo;{r.quote}&rdquo;
                 </blockquote>
-                <figcaption className="mt-6 text-sm text-muted-foreground">
-                  <span className="font-semibold text-foreground">{r.name}</span> · {r.pet}
-                </figcaption>
               </figure>
             </div>
           ))}
